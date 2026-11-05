@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f4f7fb">
+<title>VERTEX | Equipamentos e Periféricos</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+    --bg: #f4f7fb;
+    --white: #ffffff;
+    --text: #172338;
+    --muted: #64748b;
+    --line: #dce4ef;
+    --blue: #2563eb;
+    --cyan: #087eae;
+    --green: #16a36a;
+    --gradient: linear-gradient(120deg,#08a6c8,#3478ee 65%,#7956d8);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: Inter, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+button, input, textarea { font: inherit; }
+
+.container {
+    width: min(1180px, calc(100% - 40px));
+    margin: auto;
+}
+
+/* CABEÇALHO */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+}
+
+.top {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 190px;
+}
+
+.brand img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.brand strong {
+    display: block;
+    font-size: 1.35rem;
+    letter-spacing: 2px;
+    font-weight: 900;
+    background: var(--gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.brand small {
+    display: block;
+    color: var(--muted);
+    font-size: .65rem;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+.search {
+    display: flex;
+    flex: 1;
+    max-width: 440px;
+}
+
+.search input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    border-right: 0;
+    border-radius: 30px 0 0 30px;
+    background: #f7f9fc;
+    color: var(--text);
+    outline: none;
+}
+
+.search button {
+    border: 0;
+    border-radius: 0 30px 30px 0;
+    padding: 0 19px;
+    background: var(--gradient);
+    color: white;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart {
+    position: relative;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    background: transparent;
+    border-radius: 25px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.count {
+    position: absolute;
+    right: -7px;
+    top: -8px;
+    background: #f04e68;
+    color: white;
+    border-radius: 50%;
+    font-size: .7rem;
+    padding: 1px 6px;
+}
+
+.whats {
+    background: var(--green);
+    color: white;
+    border: 0;
+    border-radius: 25px;
+    padding: 11px 17px;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+nav {
+    border-top: 1px solid #edf1f6;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.nav a {
+    padding: 12px 0;
+    color: var(--muted);
+    font-size: .88rem;
+    font-weight: 600;
+}
+
+.nav a:hover { color: var(--cyan); }
+
+/* BANNER PRINCIPAL */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 78px 0 72px;
+    background:
+        radial-gradient(ellipse at 78% 40%,#dbeafe 0,transparent 36%),
+        radial-gradient(ellipse at 15% 20%,#d9f5fb 0,transparent 34%),
+        linear-gradient(120deg,#f8fbff,#eaf2ff 60%,#f1edff);
+}
+
+.hero:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(#3478ee0b 1px,transparent 1px),
+        linear-gradient(90deg,#3478ee0b 1px,transparent 1px);
+    background-size: 42px 42px;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #0b8eb455;
+    color: var(--cyan);
+    padding: 7px 13px;
+    border-radius: 30px;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem,5vw,4.6rem);
+    line-height: 1.07;
+    letter-spacing: -2px;
+    margin: 22px 0 18px;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    background: var(--gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: #52627a;
+    font-size: 1.08rem;
+    max-width: 650px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.primary, .secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.primary {
+    background: var(--gradient);
+    color: white;
+    border: 0;
+}
+
+.secondary {
+    border: 1px solid #b9c8da;
+    color: #24364f;
+    background: white;
+}
+
+.trust {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+    color: #52627a;
+    font-size: .84rem;
+}
+
+.trust i {
+    color: var(--cyan);
+    margin-right: 7px;
+}
+
+/* SEÇÃO MONTE SEU PC */
+
+.monte-pc {
+    padding: 65px 0;
+    background: linear-gradient(120deg,#f8fbff,#eef4ff 60%,#f4f0ff);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+}
+
+.monte-pc:before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, #dbeafe 0, transparent 70%);
+    border-radius: 50%;
+}
+
+.monte-pc .container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.monte-pc h2 {
+    font-size: clamp(1.9rem,3.4vw,2.7rem);
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin: 16px 0;
+}
+
+.monte-pc h2 span {
+    background: var(--gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.monte-pc p {
+    color: #52627a;
+    font-size: 1rem;
+    max-width: 520px;
+    margin-bottom: 26px;
+}
+
+.monte-steps {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.monte-steps .step {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .82rem;
+    font-weight: 700;
+    color: #24364f;
+    box-shadow: 0 5px 18px #23395b0a;
+}
+
+.monte-steps .step i {
+    color: var(--cyan);
+    font-size: 1.05rem;
+}
+
+.monte-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 15px 26px;
+    background: var(--gradient);
+    color: white;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: .98rem;
+    box-shadow: 0 10px 28px #3478ee40;
+    transition: .25s;
+}
+
+.monte-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px #3478ee55;
+}
+
+.monte-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monte-visual:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, #c7e0ff 0, transparent 65%);
+    filter: blur(30px);
+}
+
+.pc-card {
+    position: relative;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 26px;
+    width: 100%;
+    max-width: 340px;
+    box-shadow: 0 20px 50px #23395b1a;
+}
+
+.pc-card .pc-icon {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(140deg,#f3f7fc,#e2ecf9);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.pc-card .pc-icon i {
+    font-size: 4rem;
+    background: var(--gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.pc-card h3 {
+    font-size: .95rem;
+    margin-bottom: 10px;
+}
+
+.pc-spec {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: .8rem;
+}
+
+.pc-spec:last-child { border-bottom: 0; }
+.pc-spec span:first-child { color: var(--muted); }
+.pc-spec span:last-child { font-weight: 700; color: var(--cyan); }
+
+/* CATEGORIAS */
+
+.categories {
+    padding: 28px 0;
+    background: white;
+    border-bottom: 1px solid var(--line);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 14px;
+}
+
+.category {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 19px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    transition: .2s;
+    cursor: pointer;
+    box-shadow: 0 5px 18px #23395b0a;
+}
+
+.category:hover {
+    border-color: var(--cyan);
+    transform: translateY(-3px);
+}
+
+.category i {
+    font-size: 1.45rem;
+    color: var(--cyan);
+}
+
+.category b {
+    display: block;
+    font-size: .9rem;
+}
+
+.category small {
+    color: var(--muted);
+    font-size: .75rem;
+}
+
+/* PRODUTOS */
+
+section.products { padding: 65px 0; }
+
+.section-head {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.section-head .eyebrow { margin-bottom: 12px; }
+
+.section-head h2 {
+    font-size: clamp(1.7rem,3vw,2.4rem);
+    letter-spacing: -.8px;
+}
+
+.section-head p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin: 25px 0 30px;
+}
+
+.filter {
+    border: 1px solid var(--line);
+    background: white;
+    color: var(--muted);
+    padding: 9px 17px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.filter.active, .filter:hover {
+    background: var(--gradient);
+    border-color: transparent;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.product {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: .25s;
+    box-shadow: 0 8px 24px #23395b0b;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    border-color: #66b9d4;
+    box-shadow: 0 15px 35px #23395b18;
+}
+
+.photo {
+    height: 205px;
+    background: linear-gradient(140deg,#f3f7fc,#e9f0f8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 15px;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.photo i {
+    font-size: 3.6rem;
+    color: var(--cyan);
+}
+
+.tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #e5f5fb;
+    color: var(--cyan);
+    border: 1px solid #b9e6f2;
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: .66rem;
+    font-weight: 800;
+}
+
+.pinfo {
+    padding: 17px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.type {
+    color: var(--cyan);
+    text-transform: uppercase;
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.pinfo h3 {
+    font-size: .94rem;
+    line-height: 1.4;
+    margin: 7px 0 12px;
+    min-height: 54px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--text);
+}
+
+.pix {
+    font-size: .75rem;
+    color: #16845a;
+    margin: 3px 0 12px;
+}
+
+/* LINK DA FICHA TÉCNICA */
+
+.ficha-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--cyan);
+    font-size: .78rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.ficha-link:hover { color: var(--blue); }
+
+.pactions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.pactions button {
+    flex: 1;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 8px;
+    font-size: .78rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.add {
+    background: var(--gradient);
+    color: white;
+}
+
+.quote {
+    background: #1eaa6a;
+    color: white;
+}
+
+.empty {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
+}
+
+/* ORÇAMENTO CORPORATIVO */
+
+.banner {
+    padding: 35px 0;
+    background: linear-gradient(110deg,#e8f3ff,#e7f8fb);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.banner-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.banner h2 { font-size: 1.5rem; }
+.banner p { color: #52627a; margin-top: 5px; }
+
+/* CONTATO */
+
+.contact {
+    padding: 65px 0;
+    background: #eef3f9;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    margin-top: 30px;
+}
+
+.contact-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 24px #23395b0a;
+}
+
+.contact-card h3 { margin-bottom: 17px; }
+
+.contact-line {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    color: #52627a;
+    margin: 13px 0;
+}
+
+.contact-line i {
+    width: 20px;
+    color: var(--cyan);
+}
+
+.contact-form {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: #f8fafc;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    padding: 13px;
+    color: var(--text);
+    outline: none;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form button { justify-content: center; }
+
+/* RODAPÉ */
+
+footer {
+    padding: 35px 0 20px;
+    background: white;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.foot strong { color: var(--cyan); }
+.foot small { display: block; margin-top: 8px; }
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid var(--line);
+    margin-top: 25px;
+    padding-top: 18px;
+    font-size: .78rem;
+}
+
+/* WHATSAPP FLUTUANTE */
+
+.float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--green);
+    color: white;
+    font-size: 1.8rem;
+    z-index: 30;
+    box-shadow: 0 8px 25px #20c87955;
+}
+
+/* CARRINHO */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+}
+
+.modal.open { display: flex; }
+
+.modal-box {
+    width: min(540px,100%);
+    max-height: 90vh;
+    overflow: auto;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.modal-head, .modal-foot {
+    padding: 17px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+}
+
+.modal-head button {
+    background: none;
+    border: 0;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-body { padding: 18px 20px; }
+
+.modal-foot {
+    border-top: 1px solid var(--line);
+    border-bottom: 0;
+    gap: 10px;
+}
+
+.cart-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.qty button {
+    background: #e7eff9;
+    color: #24364f;
+    border: 0;
+    border-radius: 5px;
+    padding: 3px 9px;
+    cursor: pointer;
+}
+
+.muted { color: var(--muted); font-size: .85rem; }
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    font-size: 1.15rem;
+    margin-top: 17px;
+}
+
+.toast {
+    position: fixed;
+    bottom: 92px;
+    right: 22px;
+    background: #1a9e68;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 9px;
+    z-index: 80;
+    display: none;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width:950px) {
+    .grid { grid-template-columns: repeat(3,1fr); }
+    .category-grid { grid-template-columns: repeat(2,1fr); }
+    .monte-pc .container { grid-template-columns: 1fr; gap: 35px; }
+    .monte-visual { order: -1; }
+}
+
+@media(max-width:680px) {
+    .top { padding: 12px 0; flex-wrap: wrap; }
+    .brand { min-width: 0; }
+    .search { order: 3; flex-basis: 100%; max-width: none; }
+    .actions { margin-left: auto; }
+    .whats span { display: none; }
+    .hero { padding: 58px 0; }
+    .hero h1 { letter-spacing: -1px; }
+    .grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .photo { height: 155px; }
+    .pinfo { padding: 12px; }
+    .pinfo h3 { font-size: .82rem; min-height: 68px; }
+    .pactions { flex-direction: column; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .banner-inner { align-items: flex-start; flex-direction: column; }
+    .category { padding: 13px; }
+    .category small { display: none; }
+    .monte-pc { padding: 45px 0; }
+}
+
+@media(max-width:390px) {
+    .grid { grid-template-columns: 1fr; }
+    .photo { height: 210px; }
+    .category-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container top">
+
+        <a class="brand" href="#">
+            <img src="imagens/logo2026.png" alt="Vertex" onerror="this.style.display='none'">
+            <span>
+                <strong>VERTEX</strong>
+                <small>Equipamentos & Acessórios</small>
+            </span>
+        </a>
+
+        <div class="search">
+            <input id="search" type="search" placeholder="Buscar computadores, notebooks, periféricos, Apple...">
+            <button onclick="searchProducts()" aria-label="Buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="actions">
+            <button class="cart" onclick="openCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="count" id="count">0</span>
+            </button>
+
+            <a class="whats" href="#" onclick="directWhats();return false">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <nav>
+        <div class="container nav">
+            <a href="#inicio">Início</a>
+            <a href="#produtos" onclick="setFilter('computadores')">Computadores</a>
+            <a href="#produtos" onclick="setFilter('apple')">Apple</a>
+            <a href="#produtos" onclick="setFilter('impressoras')">Impressoras</a>
+            <a href="#produtos" onclick="setFilter('redes')">Redes</a>
+            <a href="#produtos" onclick="setFilter('perifericos')">Periféricos</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-inner">
+
+                <span class="eyebrow">
+                    <i class="fa-solid fa-microchip"></i>
+                    Tecnologia para sua empresa e seu dia a dia
+                </span>
+
+                <h1>
+                    Seu próximo nível<br>
+                    começa com <span>tecnologia.</span>
+                </h1>
+
+                <p>
+                    Computadores, produtos Apple, impressoras, drones,
+                    periféricos e soluções de conectividade. Encontre os
+                    equipamentos certos com atendimento próximo e especializado.
+                </p>
+
+                <div class="hero-buttons">
+                    <a class="primary" href="#produtos">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Explorar produtos
+                    </a>
+
+                    <a class="secondary" href="#" onclick="directWhats();return false">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Solicitar orçamento
+                    </a>
+                </div>
+
+                <div class="trust">
+                    <span><i class="fa-solid fa-circle-check"></i> Atendimento especializado</span>
+                    <span><i class="fa-solid fa-building"></i> Soluções para empresas</span>
+                    <span><i class="fa-solid fa-truck-fast"></i> Consulte condições de entrega</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO MONTE SEU PC -->
+    <section class="monte-pc" id="monte-seu-pc">
+        <div class="container">
+
+            <div class="monte-text">
+                <span class="eyebrow">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    Personalize do seu jeito
+                </span>
+
+                <h2>Monte seu <span>PC</span> você mesmo</h2>
+
+                <p>
+                    Escolha cada componente de acordo com sua necessidade —
+                    seja para trabalho, estudos, criação ou games. Nosso
+                    configurador guia você passo a passo para montar a máquina
+                    ideal, com compatibilidade garantida.
+                </p>
+
+                <div class="monte-steps">
+                    <div class="step"><i class="fa-solid fa-microchip"></i> Processador</div>
+                    <div class="step"><i class="fa-solid fa-memory"></i> Memória</div>
+                    <div class="step"><i class="fa-solid fa-hard-drive"></i> Armazenamento</div>
+                    <div class="step"><i class="fa-solid fa-video"></i> Placa de vídeo</div>
+                </div>
+
+                <a class="monte-cta" href="monte.html">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    Começar a montar meu PC
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="monte-visual">
+                <div class="pc-card">
+                    <div class="pc-icon">
+                        <i class="fa-solid fa-computer"></i>
+                    </div>
+                    <h3>Exemplo de configuração</h3>
+                    <div class="pc-spec"><span>Processador</span><span>Ryzen 5 5600GT</span></div>
+                    <div class="pc-spec"><span>Memória</span><span>16 GB DDR4</span></div>
+                    <div class="pc-spec"><span>Armazenamento</span><span>SSD 512 GB</span></div>
+                    <div class="pc-spec"><span>Placa de vídeo</span><span>Integrada Radeon</span></div>
+                    <div class="pc-spec"><span>Fonte</span><span>500W 80 Plus</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container category-grid">
+
+            <a class="category" href="#produtos" onclick="setFilter('computadores')">
+                <i class="fa-solid fa-desktop"></i>
+                <span>
+                    <b>Computadores</b>
+                    <small>Notebooks e desktops</small>
+                </span>
+            </a>
+
+            <a class="category" href="#produtos" onclick="setFilter('apple')">
+                <i class="fa-brands fa-apple"></i>
+                <span>
+                    <b>Apple</b>
+                    <small>Mac, iPad, Watch e acessórios</small>
+                </span>
+            </a>
+
+            <a class="category" href="#produtos" onclick="setFilter('impressoras')">
+                <i class="fa-solid fa-print"></i>
+                <span>
+                    <b>Impressoras</b>
+                    <small>Impressão e multifuncionais</small>
+                </span>
+            </a>
+
+            <a class="category" href="#produtos" onclick="setFilter('redes')">
+                <i class="fa-solid fa-network-wired"></i>
+                <span>
+                    <b>Redes e conectividade</b>
+                    <small>Wi-Fi, switches e infraestrutura</small>
+                </span>
+            </a>
+
+            <a class="category" href="#produtos" onclick="setFilter('perifericos')">
+                <i class="fa-solid fa-keyboard"></i>
+                <span>
+                    <b>Periféricos</b>
+                    <small>Monitores, teclados e acessórios</small>
+                </span>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="products" id="produtos">
+        <div class="container">
+
+            <div class="section-head">
+                <span class="eyebrow">Catálogo Vertex</span>
+                <h2>Encontre o equipamento ideal</h2>
+                <p>Confira algumas opções do nosso catálogo ou peça uma cotação personalizada.</p>
+            </div>
+
+            <div class="filters">
+                <button class="filter active" data-filter="todos" onclick="setFilter('todos')">Todos</button>
+                <button class="filter" data-filter="computadores" onclick="setFilter('computadores')">Computadores</button>
+                <button class="filter" data-filter="apple" onclick="setFilter('apple')">Apple</button>
+                <button class="filter" data-filter="impressoras" onclick="setFilter('impressoras')">Impressoras</button>
+                <button class="filter" data-filter="redes" onclick="setFilter('redes')">Redes</button>
+                <button class="filter" data-filter="perifericos" onclick="setFilter('perifericos')">Periféricos</button>
+            </div>
+
+            <div class="grid" id="grid"></div>
+
+        </div>
+    </section>
+
+    <section class="banner">
+        <div class="container banner-inner">
+            <div>
+                <h2>Ainda não encontrou o que procura?</h2>
+                <p>Veja nossa lista completa de equipamentos e itens.</p>
+            </div>
+
+            <a class="primary" href="monte.html" onclick="quoteBusiness();return false">
+                MONTE SEU COMPUTADOR VOCÊ MESMO
+            </a>
+        </div>
+    </section>
+
+    <section class="contact" id="contato">
+        <div class="container">
+
+            <div class="section-head">
+                <span class="eyebrow">Estamos à disposição</span>
+                <h2>Fale com a Vertex</h2>
+                <p>Tem dúvidas ou precisa de um produto específico? Envie sua mensagem.</p>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+                    <h3>Informações de contato</h3>
+
+                    <div class="contact-line">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>(24) 99257-4120</span>
+                    </div>
+
+                    <div class="contact-line">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>solucoesintegradasvertex@gmail.com</span>
+                    </div>
+
+                    <div class="contact-line">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Miguel Pereira, RJ • Atendimento em todo o Brasil</span>
+                    </div>
+
+                    <div class="contact-line">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Consulte nossos horários de atendimento</span>
+                    </div>
+
+                    <p class="muted" style="margin-top:20px">
+                        Atendimento para pessoa física, empresas e órgãos públicos.
+                    </p>
+                </div>
+
+                <form class="contact-card contact-form" onsubmit="sendContact(event)">
+                    <h3>Envie sua mensagem</h3>
+                    <input id="name" required placeholder="Seu nome">
+                    <input id="interest" placeholder="Produto ou equipamento de interesse">
+                    <textarea id="message" required placeholder="Como podemos ajudar?"></textarea>
+
+                    <button class="whats" type="submit">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Enviar pelo WhatsApp
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+
+        <div class="foot">
+            <div>
+                <strong>VERTEX | Tecnologia & Soluções</strong>
+                <small>Equipamentos, conectividade e tecnologia para todos os momentos.</small>
+            </div>
+
+            <div>
+                <strong>Atendimento</strong>
+                <small>WhatsApp: (24) 99257-4120</small>
+                <small>solucoesintegradasvertex@gmail.com</small>
+            </div>
+
+            <div>
+                <strong>Categorias</strong>
+                <small>Computadores • Apple • Impressoras • Redes • Drones • Periféricos</small>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © <span id="year"></span> Vertex. Todos os direitos reservados.
+        </div>
+
+    </div>
+</footer>
+
+<a class="float" href="#" onclick="directWhats();return false" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeCart()">
+    <div class="modal-box">
+
+        <div class="modal-head">
+            <b><i class="fa-solid fa-cart-shopping"></i> Seu pedido</b>
+            <button onclick="closeCart()">&times;</button>
+        </div>
+
+        <div class="modal-body" id="cartItems"></div>
+
+        <div class="modal-foot">
+            <button class="filter" onclick="clearCart()">Limpar pedido</button>
+            <button class="whats" onclick="checkout()">
+                <i class="fa-brands fa-whatsapp"></i>
+                Enviar pedido
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+const PHONE = "5524992574120";
+
+const products = [
+
+    {
+        id: 1,
+        name: "Apple MacBook Neo 256GB",
+        category: "apple",
+        price: 5600,
+        image: "imagens/pc.png",
+        label: "Apple",
+        ficha: "https://www.apple.com/br/macbook-neo/"
+    },
+
+    {
+        id: 2,
+        name: "Apple MacBook Neo 512GB",
+        category: "apple",
+        price: 6200.90,
+        image: "imagens/3.png",
+        label: "Apple",
+        ficha: "https://www.apple.com/br/macbook-neo/"
+    },
+
+    {
+        id: 3,
+        name: "PC All in One Acer C24 Core i3, 8GB, SSD 256GB",
+        category: "computadores",
+        price: 4800,
+        image: "imagens/4.png",
+        label: "Computador",
+        ficha: "https://www.acer.com/pt-pt/desktops-and-all-in-ones/aspire-all-in-ones/aspire-c-intel/pdp/DQ.BMJEB.001"
+    },
+
+    {
+        id: 4,
+        name: "PC All in One HP CR0273 Ryzen 3, 8GB, SSD 512GB",
+        category: "computadores",
+        price: 5200,
+        image: "imagens/5.png",
+        label: "Computador",
+        ficha: "https://www.visaovip.com/prod/computadores/desktop-all-in-one-27-cr0273la-amd-ryzen-7-7730u-de-2-0ghz-tela-full-hd-27-16gb-de-ram-512gb-ssd-freedos-branco-espanhol/61090/"
+    },
+
+    {
+        id: 5,
+        name: "Lenovo IdeaCentre All in One Core i5, 16GB, SSD 512GB",
+        category: "computadores",
+        price: 6800,
+        image: "imagens/lenovo.png",
+        label: "Computador",
+        ficha: "https://www.lenovo.com/br/pt/p/desktops/ideacentre/serie-aio-500/ideacentre-aio-i-gen-9-(24-inch-intel)/len102d0035?orgRef=https%253A%252F%252Fwww.google.com%252F&srsltid=AYCX9vL8DxHblVJe4TrN_SjuR3ztzCvB20f4t8DUhAGKG7uRbqwdErnI#features"
+    },
+
+    {
+        id: 6,
+        name: "Acer All in One C24 Ryzen 3, 16GB, SSD 256GB",
+        category: "computadores",
+        price: 4500.90,
+        image: "imagens/acer2.png",
+        label: "Computador",
+        ficha: "https://www.acer.com/pt-pt/desktops-and-all-in-ones/aspire-all-in-ones/aspire-c-intel/pdp/DQ.BMJEB.001"
+    },
+
+    {
+        id: 7,
+        name: "Apple iPad Air M4 11” 128GB",
+        category: "apple",
+        price: 5600,
+        image: "imagens/ipad128.png",
+        label: "Apple",
+        ficha: "https://www.apple.com/br/ipad-air/"
+    },
+
+    {
+        id: 8,
+        name: "Apple Watch Series 11 46mm",
+        category: "apple",
+        price: 2800,
+        image: "imagens/watch.png",
+        label: "Apple",
+        ficha: "https://www.apple.com/br/newsroom/2025/09/apple-introduces-apple-watch-series-11/"
+    },
+
+    {
+        id: 9,
+        name: "Apple Watch Series 3 44mm Midnight",
+        category: "apple",
+        price: 2300,
+        image: "imagens/watch3.png",
+        label: "Apple",
+        ficha: "https://www.apple.com/br/apple-watch-se-3/"
+    },
+
+    {
+        id: 10,
+        name: "Apple AirPods 4 Bluetooth",
+        category: "apple",
+        price: 1499.90,
+        image: "imagens/airpods.png",
+        label: "Apple",
+        ficha: "https://support.apple.com/pt-br/121203"
+    },
+
+    {
+        id: 11,
+        name: "Impressora Epson EcoTank L5590 Multifuncional",
+        category: "impressoras",
+        price: 2000,
+        image: "imagens/epson.png",
+        label: "Impressora",
+        ficha: "https://epson.com.br/Para-empresas/Impressoras/Impressoras-a-Jato-de-Tinta/Impressora-Multifuncional-EcoTank%C2%AE-L5590/p/C11CK57302"
+    },
+
+    {
+        id: 12,
+        name: "Impressora Epson EcoTank L6370 Duplex",
+        category: "impressoras",
+        price: 2450,
+        image: "imagens/epson2.png",
+        label: "Impressora",
+        ficha: "http://epson.com.br/Para-empresas/Impressoras/Impressoras-a-Jato-de-Tinta/Impressora-Multifuncional-Colorida-Epson-EcoTank-L6370/p/C11CL43302BR"
+    },
+
+    {
+        id: 13,
+        name: "Epson WorkForce Pro WF-M5899",
+        category: "impressoras",
+        price: 3899,
+        image: "imagens/epson3.png",
+        label: "Impressora",
+        ficha: "https://epson.com.br/Suporte/Impressoras/Impressoras-multifuncionais/Epson-WorkForce/Epson-WorkForce-Pro-WF-M5899/s/SPT_C11CK76201"
+    },
+
+    {
+        id: 14,
+        name: "Epson WorkForce Pro WF-M5399",
+        category: "impressoras",
+        price: 2700,
+        image: "imagens/epson4.png",
+        label: "Impressora",
+        ficha: "https://epson.com.br/Para-empresas/Impressoras/Impressoras-a-Jato-de-Tinta/Impressora-Monocrom%C3%A1tica-WorkForce-Pro-WF-M5399/p/C11CK77301"
+    },
+
+    {
+        id: 15,
+        name: "Roteador Wi-Fi 6 Gigabit Dual Band AX1500 EasyMesh",
+        category: "redes",
+        price: 249,
+        image: "imagens/tplink.png",
+        label: "Redes",
+        ficha: "https://www.tp-link.com/br/service-provider/wifi-router/ex141/"
+    },
+
+    {
+        id: 16,
+        name: "Roteador Wireless Gigabit Dual Band AC1350",
+        category: "redes",
+        price: 199,
+        image: "imagens/tplink2.png",
+        label: "Redes",
+        ficha: "https://www.tp-link.com/br/service-provider/wifi-router/ec230-g1/"
+    },
+
+    {
+        id: 17,
+        name: "Repetidor de Sinal Wi-Fi Mesh AC1200",
+        category: "redes",
+        price: 239,
+        image: "imagens/repetidor.png",
+        label: "Redes",
+        ficha: "https://www.tp-link.com/br/home-networking/range-extender/re305/"
+    },
+
+    {
+        id: 18,
+        name: "UBIQUITI UNIFI AP AC LONG RANGE 2.4/5.0GHZ 450/867M",
+        category: "redes",
+        price: 869,
+        image: "imagens/ubiquiti.png",
+        label: "Redes",
+        ficha: "https://br.store.ui.com/br/pt/products/uap-ac-pro"
+    },
+
+    {
+        id: 19,
+        name: "Notebook Acer Aspire Go 15.6 FHD Ryzen 3 7320u 12GB 128GB",
+        category: "computadores",
+        price: 2999,
+        image: "imagens/note.png",
+        label: "Notebook",
+        ficha: "https://www.acer.com/br-pt/laptops/aspire/aspire-go-intel"
+    },
+
+    {
+        id: 20,
+        name: "Notebook Acer Nitro V15 Core 5- 210h 16 RAM 512 SSD Nvidia Geforce Rtx 4050",
+        category: "computadores",
+        price: 7199,
+        image: "imagens/nitro.png",
+        label: "Notebook",
+        ficha: "https://www.acer.com/br-pt/laptops/nitro/nitro-v-15"
+    },
+
+    {
+        id: 21,
+        name: "Notebook Asus Tuf Gaming A16 Fa607nug-rl132w Ryzen 7 Rtx4050",
+        category: "computadores",
+        price: 7099,
+        image: "imagens/asus.png",
+        label: "Notebook",
+        ficha: "https://br.store.asus.com/notebook-asus-tuf-gaming-a16-fa607nuq.html"
+    },
+
+    {
+        id: 22,
+        name: "Notebook Dell 15 DC15-I51334U-A50, Intel i5-1334U, Windows 11",
+        category: "computadores",
+        price: 4299,
+        image: "imagens/dell.png",
+        label: "Notebook",
+        ficha: "fichas-tecnicas/workstation-profissional.pdf"
+    },
+
+    {
+        id: 23,
+        name: "PC Desktop I5 12400F/8GB/RX580/ Ssd 1TB/580W",
+        category: "Computador",
+        price: 4500,
+        image: "imagens/PC03.png",
+        label: "Computador",
+        ficha: "fichas-tecnicas/drone-compacto-4k.pdf"
+    },
+
+    {
+        id: 24,
+        name: "PC Desktop Ryzen 3 3200G/16GB DDR4/256M.2/350W",
+        category: "Computador",
+        price: 2599,
+        image: "imagens/pcr.png",
+        label: "Computador",
+        ficha: "fichas-tecnicas/headset-com-microfone.pdf"
+    },
+
+    {
+        id: 25,
+        name: "PC Desktop Empresarial Ryzen 5 5600GT/16GB/256GB/500W.",
+        category: "Computador",
+        price: 3199,
+        image: "imagens/pc04.png",
+        label: "Computador",
+        ficha: "fichas-tecnicas/drone-compacto-viagem.pdf"
+    },
+
+    {
+        id: 26,
+        name: "MONITOR LED BRAZIL PC 23 FULL HD 75HZ PRETO WIDESCREEN",
+        category: "Computador",
+        price: 369,
+        image: "imagens/monitor.png",
+        label: "Computador",
+        ficha: "fichas-tecnicas/kit-teclado-mouse.pdf"
+    },
+
+    {
+        id: 27,
+        name: "MONITOR LED BRAZIL PC 31.5 32W-CHOE CURVO R1800 FULL HD 75Hz PRETO",
+        category: "Computador",
+        price: 899,
+        image: "imagens/monitor2.png",
+        label: "Computador",
+        ficha: "fichas-tecnicas/headset-com-microfone.pdf"
+    },
+
+    {
+        id: 28,
+        name: "Monitor LED Tronos 24” Full HD 75Hz Widescreen HDMI/VGA",
+        category: "Computador",
+        price: 399,
+        image: "imagens/monitor3.png",
+        label: "Computador",
+        ficha: "fichas-tecnicas/kit-teclado-mouse.pdf"
+    },
+
+    {
+        id: 29,
+        name: "Combo Teclado E Mouse Sem Fio Logitech Mk250",
+        category: "perifericos",
+        price: 199,
+        image: "imagens/teclado.png",
+        label: "perifericos",
+        ficha: "fichas-tecnicas/headset-com-microfone.pdf"
+    },
+
+    {
+        id: 30,
+        name: "Teclado Sem Fio Logitech K400 Plus Wireless Touch",
+        category: "perifericos",
+        price: 209,
+        image: "imagens/teclado2.png",
+        label: "perifericos",
+        ficha: "fichas-tecnicas/webcam-full-hd.pdf"
+    }
+];
+
+let cart = JSON.parse(localStorage.getItem("vertex_store_cart") || "[]");
+let filter = "todos";
+let term = "";
+
+const money = n => n.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+});
+
+function render() {
+
+    const list = products.filter(p =>
+        (filter === "todos" || p.category === filter) &&
+        p.name.toLowerCase().includes(term)
+    );
+
+    document.getElementById("grid").innerHTML = list.length
+        ? list.map(p => `
+            <article class="product">
+
+                <div class="photo">
+
+                    ${p.image ? `
+                        <img
+                            src="${p.image}"
+                            alt="${p.name}"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+                        >
+                        <i class="fa-solid fa-${
+                            p.category === "impressoras" ? "print" :
+                            p.category === "redes" ? "network-wired" :
+                            p.category === "drones" ? "helicopter" :
+                            p.category === "perifericos" ? "keyboard" :
+                            p.category === "apple" ? "mobile-screen-button" :
+                            "desktop"
+                        }" style="display:none"></i>
+                    ` : `
+                        <i class="fa-solid fa-${
+                            p.category === "drones" ? "helicopter" :
+                            p.category === "perifericos" ? "keyboard" :
+                            "network-wired"
+                        }"></i>
+                    `}
+
+                    <span class="tag">${p.label}</span>
+                </div>
+
+                <div class="pinfo">
+
+                    <span class="type">
+                        ${
+                            p.category === "apple" ? "Linha Apple" :
+                            p.category === "redes" ? "Conectividade" :
+                            p.category === "drones" ? "Drones e acessórios" :
+                            p.category === "perifericos" ? "Periféricos de informática" :
+                            p.label
+                        }
+                    </span>
+
+                    <h3>${p.name}</h3>
+
+                    <div class="price">
+                        ${p.price ? money(p.price) : "Consulte"}
+                    </div>
+
+                    <div class="pix">
+                        ${
+                            p.price
+                            ? "Consulte condições de pagamento"
+                            : "Cotação personalizada"
+                        }
+                    </div>
+
+                    <a
+                        class="ficha-link"
+                        href="${p.ficha}"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="fa-solid fa-file-pdf"></i>
+                        Ver ficha técnica
+                    </a>
+
+                    <div class="pactions">
+
+                        ${
+                            p.price
+                            ? `<button class="add" onclick="addCart(${p.id})">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Adicionar
+                              </button>`
+                            : ""
+                        }
+
+                        <button class="quote" onclick="askProduct(${p.id})">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            ${p.price ? "Consultar" : "Solicitar cotação"}
+                        </button>
+
+                    </div>
+
+                </div>
+            </article>
+        `).join("")
+        : '<div class="empty">Nenhum produto encontrado. Tente outra busca.</div>';
+}
+
+function setFilter(f) {
+    filter = f;
+
+    document.querySelectorAll(".filter").forEach(b =>
+        b.classList.toggle("active", b.dataset.filter === f)
+    );
+
+    render();
+}
+
+function searchProducts() {
+    term = document.getElementById("search").value.trim().toLowerCase();
+    render();
+}
+
+document.getElementById("search").addEventListener("input", searchProducts);
+
+function persist() {
+    localStorage.setItem("vertex_store_cart", JSON.stringify(cart));
+
+    document.getElementById("count").textContent =
+        cart.reduce((s,p) => s + p.qty, 0);
+}
+
+function addCart(id) {
+    let p = products.find(x => x.id === id);
+    let item = cart.find(x => x.id === id);
+
+    if (item) {
+        item.qty++;
+    } else {
+        cart.push({...p, qty: 1});
+    }
+
+    persist();
+    toast("Produto adicionado ao pedido!");
+}
+
+function removeCart(id) {
+    cart = cart.filter(x => x.id !== id);
+    persist();
+    showCart();
+}
+
+function qty(id, d) {
+    let p = cart.find(x => x.id === id);
+
+    if (p) p.qty += d;
+
+    if (p && p.qty <= 0) {
+        removeCart(id);
+    } else {
+        persist();
+        showCart();
+    }
+}
+
+function openCart() {
+    showCart();
+    document.getElementById("modal").classList.add("open");
+}
+
+function closeCart() {
+    document.getElementById("modal").classList.remove("open");
+}
+
+function showCart() {
+    let el = document.getElementById("cartItems");
+
+    if (!cart.length) {
+        el.innerHTML = '<p class="muted">Seu pedido está vazio. Adicione produtos para continuar.</p>';
+        return;
+    }
+
+    let total = cart.reduce((s,p) => s + p.price * p.qty, 0);
+
+    el.innerHTML = cart.map(p => `
+        <div class="cart-row">
+
+            <div>
+                <b>${p.name}</b>
+                <div class="muted">${money(p.price)} cada</div>
+
+                <div class="qty">
+                    <button onclick="qty(${p.id},-1)">−</button>
+                    ${p.qty}
+                    <button onclick="qty(${p.id},1)">+</button>
+                </div>
+            </div>
+
+            <div>
+                <b>${money(p.price * p.qty)}</b>
+                <br>
+                <button
+                    class="muted"
+                    style="background:none;border:0;color:#ff7188;cursor:pointer"
+                    onclick="removeCart(${p.id})"
+                >
+                    Remover
+                </button>
+            </div>
+
+        </div>
+    `).join("") + `
+        <div class="total">
+            <span>Total</span>
+            <span>${money(total)}</span>
+        </div>
+
+        <p class="muted" style="margin-top:8px">
+            Valores sujeitos à confirmação de disponibilidade e condições comerciais.
+        </p>
+    `;
+}
+
+function clearCart() {
+    cart = [];
+    persist();
+    showCart();
+}
+
+function checkout() {
+
+    if (!cart.length) {
+        toast("Adicione produtos ao pedido.");
+        return;
+    }
+
+    let total = cart.reduce((s,p) => s + p.price * p.qty, 0);
+
+    let msg = "Olá! Gostaria de solicitar este pedido na Vertex:\n\n";
+
+    msg += cart.map(p =>
+        `• ${p.name} — ${p.qty} un. — ${money(p.price * p.qty)}`
+    ).join("\n");
+
+    msg += `\n\nTotal estimado: ${money(total)}`;
+    msg += "\n\nPoderiam confirmar disponibilidade e prazo?";
+
+    window.open(
+        `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,
+        "_blank"
+    );
+}
+
+function askProduct(id) {
+
+    let p = products.find(x => x.id === id);
+
+    let msg = `Olá! Tenho interesse em ${p.name}. Poderiam me enviar informações, disponibilidade e condições?`;
+
+    window.open(
+        `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,
+        "_blank"
+    );
+}
+
+function directWhats() {
+
+    let msg = "Olá! Vim pelo site da Vertex e gostaria de informações sobre os produtos.";
+
+    window.open(
+        `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,
+        "_blank"
+    );
+}
+
+function quoteBusiness() {
+
+    let msg = "Olá! Gostaria de solicitar um orçamento para equipar minha empresa. Podemos conversar?";
+
+    window.open(
+        `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,
+        "_blank"
+    );
+}
+
+function sendContact(e) {
+
+    e.preventDefault();
+
+    let msg = `
+Olá! Meu nome é ${document.getElementById("name").value}.
+Interesse: ${document.getElementById("interest").value || "Não informado"}.
+${document.getElementById("message").value}
+    `;
+
+    window.open(
+        `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,
+        "_blank"
+    );
+}
+
+function toast(t) {
+
+    let el = document.getElementById("toast");
+
+    el.textContent = t;
+    el.style.display = "block";
+
+    setTimeout(() => {
+        el.style.display = "none";
+    }, 2500);
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+persist();
+render();
+
+</script>
+
+</body>
+</html>
